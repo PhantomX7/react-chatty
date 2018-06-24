@@ -3,8 +3,9 @@ import Title from './Title';
 import MessageList from './MessageList';
 import SendMessageForm from './SendMessageForm';
 import { ChatManager, TokenProvider } from '@pusher/chatkit';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -33,8 +34,6 @@ export default class App extends Component {
         }
       }
     });
-    console.log(currentUser.rooms);
-    console.log('aaaaaa');
 
     // currentUser.subscribeToRoom({
     //   roomId: roomId,
@@ -49,6 +48,9 @@ export default class App extends Component {
   }
 
   render() {
+    if (!this.props.user) {
+      return <div>Loading</div>;
+    }
     return (
       <div className="app">
         <Title />
@@ -58,3 +60,11 @@ export default class App extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    user: state.auth.user
+  };
+}
+
+export default connect(mapStateToProps)(App);

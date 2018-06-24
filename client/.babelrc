@@ -1,4 +1,8 @@
 {
   "presets": ["env", "react"],
-  "plugins": ["transform-regenerator"]
+  "plugins": [
+    "transform-regenerator",
+    "transform-es2015-destructuring",
+    "transform-object-rest-spread"
+  ]
 }

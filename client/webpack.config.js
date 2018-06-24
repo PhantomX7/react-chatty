@@ -13,8 +13,15 @@ module.exports = {
     filename: '[name].[hash].js'
   },
   devServer: {
+    historyApiFallback: true,
     contentBase: './dist',
-    hot: true
+    hot: true,
+    proxy: [
+      {
+        context: ['/auth', '/api'],
+        target: 'http://localhost:8000'
+      }
+    ]
   },
   externals: {
     React: 'react'

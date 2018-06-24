@@ -17,19 +17,21 @@ module.exports = {
   parserOptions: {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
-      "spread": true,
+      spread: true,
       jsx: true
     },
     sourceType: 'module'
   },
   plugins: ['react'],
   rules: {
-    indent: ['error', 2,  {"SwitchCase": 1}],
+    indent: ['error', 2, { SwitchCase: 1 }],
     'linebreak-style': 'off',
     quotes: ['warn', 'single'],
     semi: ['error', 'always'],
     'prettier/prettier': 'error',
     'global-require': 'off',
-    'no-console': 'warn'
+    'no-console': 'warn',
+    'react/forbid-prop-types': 0,
+    'react/prop-types': 0
   }
 };

@@ -12,16 +12,17 @@
 }
 
 .title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  color: $secondaryColor;
-  background: $primaryColor;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    font-size: 26px;
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+.signout{
+    display: relative;
 }
 
 .message {
@@ -30,7 +31,7 @@
 
 .message div:nth-child(1) {
     font-size: 11px;
-    color: $mainTextColor;
+    color: $primaryTextColor;
     opacity: 0.9;
     margin-bottom: 6px;
 }
